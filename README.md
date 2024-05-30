@@ -5,17 +5,7 @@
 
 The interface design to bridge the Blur
 kernel estimation network and the ORB-SLAM3
-pipeline is our novel contribution. The aim was
-to create a package that can incorporate motion
-blur correction in real-time and further improve the
-tracking accuracy of the VO system. To this end,
-we first transfer the PyTorch model for the Non-
-Uniform Blur Kernel estimation to a C++ frontend
-for compatibility with the ORB-SLAM3 software
-build. The low latency requirement in the C++
-frontend further makes it a more suitable option
-compared to its Python counterpart [15].The overall
-workflow is as follows:
+pipeline is achieved as follows:
 1. ORB-SLAM3 receives the raw image sequence
 as usual
 2. The image is then fed to the tracking thread
@@ -33,6 +23,8 @@ keypoint pixel locations
 
 
 ___
+---
+
 ### V1.0, December 22th, 2021
 **Authors:** Carlos Campos, Richard Elvira, Juan J. Gómez Rodríguez, [José M. M. Montiel](http://webdiis.unizar.es/~josemari/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/).
 
