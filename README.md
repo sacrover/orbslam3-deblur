@@ -3,8 +3,8 @@
 ## Deblur Mod
 ![alt text](images/kerenelORB.png)
 
-The interface design to bridge the Blur
-kernel estimation network and the ORB-SLAM3
+The interface design to bridge the [Blur
+kernel estimation network](https://arxiv.org/abs/2102.01026) and the [ORB-SLAM3](https://github.com/UZ-SLAMLab/ORB_SLAM3)
 pipeline is achieved as follows:
 1. ORB-SLAM3 receives the raw image sequence
 as usual
