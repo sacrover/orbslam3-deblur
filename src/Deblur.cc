@@ -33,7 +33,7 @@ namespace ORB_SLAM3
     {
         torch::Tensor blurryTensor, blurryTensorNormalized, blurryTensorCorrected, cumulativeKernel, masks;
 
-        std::string model_file("/root/datasets/TwoHeads.pt");
+        std::string model_file("/home/sv/github/orbslam3-deblur/deblur_model_weights/TwoHeads.pt");
         torch::jit::script::Module two_heads;
         two_heads = torch::jit::load(model_file);
         two_heads.to(at::kCUDA);
@@ -155,7 +155,7 @@ namespace ORB_SLAM3
                 // Check if any non-zero elements are present in the row
                 // std::cout << rowTensor << std::endl;
 
-                if (rowTensor.max().item<uint8_t>() > 150)
+                if (rowTensor.max().item<uint8_t>() > 100)
                 {
                     if (lowestNonZeroRow == -1)
                     {
@@ -164,7 +164,7 @@ namespace ORB_SLAM3
                     highestNonZeroRow = k; // Update highestNonZeroRow with the current row
                 }
 
-                if (colTensor.max().item<uint8_t>() > 150)
+                if (colTensor.max().item<uint8_t>() > 100)
                 {
                     if (lowestNonZeroCol == -1)
                     {
@@ -195,7 +195,7 @@ namespace ORB_SLAM3
             rowSpread = highestNonZeroRow - lowestNonZeroRow;
             colSpread = highestNonZeroCol - lowestNonZeroCol;
 
-            if (rowSpread > 9 || colSpread > 9)
+            if (rowSpread > 12 || colSpread > 12)
             {
                 // std::cout << "RowColSpread: " << rowSpread << colSpread << std::endl;
 

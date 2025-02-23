@@ -36,6 +36,6 @@ echo "Configuring and building ORB_SLAM3 ..."
 
 mkdir build
 cd build
-cmake -DCMAKE_PREFIX_PATH=/root/datasets/libtorch ..
+cmake -DCMAKE_PREFIX_PATH=/home/sv/torchcpp/libtorch ..
 cmake --build . --config Release
 # make -j4

@@ -220,6 +220,11 @@ add_executable(mono_tum_vi
 target_link_libraries(mono_tum_vi ${PROJECT_NAME} "${TORCH_LIBRARIES}")
 set_property(TARGET mono_tum_vi PROPERTY CXX_STANDARD 17)
 
+add_executable(mono_unity
+        Examples/Monocular/mono_unity.cc)
+target_link_libraries(mono_unity ${PROJECT_NAME} "${TORCH_LIBRARIES}")
+set_property(TARGET mono_euroc PROPERTY CXX_STANDARD 17)
+
 # if(realsense2_FOUND)
 #     add_executable(mono_realsense_t265
 #             Examples/Monocular/mono_realsense_t265.cc)

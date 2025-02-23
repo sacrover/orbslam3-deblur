@@ -2137,7 +2137,7 @@ namespace ORB_SLAM3
             {
                 if (bOK)
                 {
-                    Deblur BlurTest(2.2, 115);
+                    Deblur BlurTest(2.2, 750);
                     BlurTest.VarLaplacian(mImGray);
                     // std::cout << "Image: " << BlurTest.ImageBlurReport() << std::endl;
                     if (BlurTest.ImageBlurReport())
